@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+  end
+
   def new
     if current_user.nil?
       redirect_to root_path
