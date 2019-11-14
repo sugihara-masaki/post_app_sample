@@ -1,19 +1,19 @@
-<header>
-  <%= link_to "Top", root_path %>
-  <% if user_signed_in? %>
-  こんにちは<%= current_user.name %>さん
-  <% end %>
-  <div>
-    <ul>
+<header class='navbar navbar-dark bg-dark sticky-top'>
+  <%= link_to 'Top', root_path, class: 'navbar-brand' %>
+  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
+    <span class='navbar-toggler-icon'></span>
+  </button>
+  <div class='collapse navbar-collapse' id='navbarNavDropdown'>
+    <ul class='navbar-nav'>
       <% if user_signed_in? %>
-        <li><%= link_to 'New Post', new_post_path %></li>
-        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <li class='nav-item'><%= link_to 'New Post', new_post_path, class: 'nav-link' %></li>
+        <li class='nav-item'><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
       <% else %>
-        <li><%= link_to 'Login', new_user_session_path %></li>
-        <li><%= link_to 'Register', new_user_registration_path %></li>
+        <li class='nav-item'><%= link_to 'Login', new_user_session_path, class: 'nav-link' %></li>
+        <li class='nav-item'><%= link_to 'Register', new_user_registration_path, class: 'nav-link' %></li>
       <% end %>
-      <li><%= link_to 'About', about_path %></li>
-      <li><%= link_to 'Help', help_path %></li>
+      <li class='nav-item'><%= link_to 'About', about_path, class: 'nav-link' %></li>
+      <li class='nav-item'><%= link_to 'Help', help_path, class: 'nav-link' %></li>
     </ul>
   </div>
 </header>
