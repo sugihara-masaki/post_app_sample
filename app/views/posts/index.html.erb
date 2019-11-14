@@ -1,4 +1,6 @@
 <h1>投稿一覧</h1>
-<% @posts.each do |post| %>
-  <p><%= link_to post.title, post %></p>
-<% end %>
+<ul class='list-group list-group-flush'>
+  <% @posts.each do |post| %>
+    <%= link_to post.title, post, class: 'list-group-item list-group-item-action' %>
+  <% end %>
+</ul>
